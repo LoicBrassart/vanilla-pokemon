@@ -1,0 +1,50 @@
+:root {
+  --squareSize: 16px;
+  --nbStepsWidth: 20;
+  --nbStepsHeight: 20;
+  --durationStep: 0.2s;
+}
+
+body {
+  background-color: #666666;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#game {
+  width: calc(var(--squareSize) * var(--nbStepsWidth));
+  height: calc(var(--squareSize) * var(--nbStepsHeight));
+  margin: calc(var(--squareSize));
+  position: relative;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+#background .square {
+  background: url('../assets/img/bg.png');
+  background-size: contain;
+  width: var(--squareSize);
+  height: var(--squareSize);
+}
+#background .square.grass {
+  background: url('../assets/img/bgHerbes.png');
+}
+#background .square.water {
+  background: url('../assets/img/bgEau.gif');
+}
+
+#player {
+  width: var(--squareSize);
+  height: var(--squareSize);
+  position: absolute;
+  left: 160px;
+  top: 160px;
+  transition: var(--durationStep) linear all;
+}
